@@ -14,6 +14,7 @@
 #include "Screen.h"
 #include "UTF8.h"
 #include "Vlogging.h"
+#include "Tas.h"
 
 int inline KeyPoll::getThreshold(void)
 {
@@ -148,7 +149,11 @@ void KeyPoll::Poll(void)
         case SDL_KEYDOWN:
         {
             keymap[evt.key.keysym.sym] = true;
-
+            if (evt.key.keysym.sym == SDLK_F5) {
+                save_state();
+            } else if (evt.key.keysym.sym == SDLK_F7) {
+                load_state();
+            }
             if (evt.key.keysym.sym == SDLK_BACKSPACE)
             {
                 pressedbackspace = true;

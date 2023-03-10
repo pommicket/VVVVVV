@@ -115,6 +115,7 @@ set(VVV_SRC
     src/VFormat.c
     src/Vlogging.c
     src/Xoshiro.c
+    src/Tas.cpp
     ../third_party/physfs/extras/physfsrwops.c
 )
 if(NOT CUSTOM_LEVEL_SUPPORT STREQUAL "DISABLED")
